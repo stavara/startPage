@@ -1,0 +1,157 @@
+/* var */
+:root {
+    --main-bg-color: #161616;
+}
+/* default (general) propierties after normalize */
+@font-face {
+    font-family: 'openS';
+    src: url('font/OpenSans-Medium.ttf');
+}
+@font-face {
+    font-family: 'openSBig';
+    src: url('font/OpenSans-Bold.ttf');
+}
+* {
+    box-sizing: border-box;
+}
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+a:hover {
+    text-decoration: underline;
+}
+/* propierties about site */
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding-bottom: 50px;
+    background-color: var(--main-bg-color);
+    font-family: 'openS';
+}
+#body {
+    display: flex;
+    width: 800px;
+    height: 400px; /* o 375 */
+    border-radius: 5px;
+    margin-top: 250px;
+}
+footer {
+    position: absolute;
+    text-align: center;
+    color: #ffffffe7;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+}
+#leftB {
+    height: 100%;
+    width: 32%;
+}
+#backgroundImg {
+    height : 100%;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.15), 0 9px 9px rgba(0,0,0,0.1);
+}
+#backgroundImg:hover{
+    transform: translateY(-5px);
+}
+#rightB {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 68%;
+    padding: 0 0 0 50px;
+}
+#clock{
+    color: antiquewhite;
+    font-size: 20px;
+    align-self: flex-end;
+    margin-bottom: 25px;
+}
+#list {
+    display: flex;
+    justify-content: space-between;
+}
+ul {
+    /* just to know 0, 1*/
+    display: flex;
+    flex-direction: column;
+}
+ul[title]::before {
+    content: attr(title);
+    font-size: 21px;
+    margin-bottom: 8px;
+    font-family: 'openSBig';
+}
+ul[title]:nth-child(1)::before {
+    color: #ff7a7a;
+}
+ul[title]:nth-child(2)::before {
+    color: #ffe588;
+}
+ul[title]:nth-child(3)::before {
+    color: #b3e98d;
+}
+li {
+    line-height: 2;
+}
+a {
+    font-size: 16px;
+    /*text-transform: capitalize;*/
+}
+#search {
+    margin-top: 75px;
+    width: 800px;
+    /*padding-right: 40px;*/ /* 50px (padding of rightB )will be correct but we have a visial effect*/
+}
+#search > form > input {
+    outline: none;
+    padding: 10px;
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    background-color: #303134;
+    color: #ffffffd5;
+}
+#search > form > input::placeholder {
+    color: #ffffff8c;
+}
+#quote{
+    margin-top: 25px;
+    color: #e5c4fa;
+    font-style: italic;
+    font-size: 14px;
+    text-align: right;
+}
+#quote > p{
+    text-transform: capitalize;
+}
+/* responsive */
+@media only screen and (max-width: 810px) {
+    #search,footer, #rightB{
+        display: none;
+    }
+    #body{
+        width: 275px;
+    }
+    #leftB{
+        width: 100%;
+    }
+}
